@@ -1,0 +1,55 @@
+3- ¿En qué ruta de windows 10 podemos encontrar la resolución de nombre de dominios local? ¿Y en windows 11?
+
+ Windows 10: 
+    Panel de control\Redes e Internet\Conexiones de red
+        propiedades del WI-FI 
+            Ingresa a las propiedades de "Habilitar protocolo de internet version 4(TCO/IPv6)"
+
+Ahí se encontrará la resolucion del nombre de dominio.
+
+
+ Windows 11:
+    Panel de control\Redes e Internet\Estado
+        "Cambiar propiedades de la conexión" (Click en nombre de la red conectada)
+            "Configuración de IPv4" 
+                Editar
+            En la sección "Asignación de servidor DNS", seleccione Manual
+                Ingrese las direcciones IP de los servidores DNS locales que desea utilizar 
+                en los campos "Servidor DNS preferido" y "Servidor DNS alternativo"
+                    Guardar.
+
+
+Windows 10 y 11:
+        Abre el Símbolo del sistema como administrador.
+            Escriba el siguiente comando 
+            netsh interface ip address set dnsservers name <nombre_adaptador_red> static <direccion_ip_dns_primaria> <direccion_ip_dns_secundaria>
+
+
+      Reemplace <nombre_adaptador_red> con el nombre del adaptador de red que desea configurar, 
+      <direccion_ip_dns_primaria> con la dirección IP del servidor DNS primario y <direccion_ip_dns_secundaria> 
+      con la dirección IP del servidor DNS secundario.  
+
+---------------------------------------------------------------------------------------------------------------
+
+4- ¿Cúal o cuáles de las siguientes urls provoca una encriptación de datos punto a punto entre 
+el navegador del cliente y el servidor final?
+
+    c) https://www.google.es/
+
+Esta URL provoca la encriptación de datos porque contiene una combinacionde HTTP y TLS/SSL que 
+se encargan de cifrar. 
+
+----------------------------------------------------------------------------------------------------------------
+
+6- El código de estado de una petición http es 418 ¿Cuál es el problema de esta petición?
+
+    c) El código es válido pero es imposible que lo devuelva una conexión
+
+Es una status de "broma", además un servidor devuleve códigos de status estándar. 
+
+----------------------------------------------------------------------------------------------------------------
+
+10- ¿Una misma dirección IP en un mismo día y hora puede proceder de más de una persona?
+
+    Si, las direcciones IP son asignadas por los proveedores de red, asi que pueden existir dos o más 
+    direcciones IP públicas , pero no deberían ser las mismas entre los clientes distintos del mismo proveedor.
